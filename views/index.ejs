@@ -1,13 +1,13 @@
 <html>
 <head>
-    <title> ToDo App </title>
+    <title>Todo</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet">
     <link href="/Style.css" rel="stylesheet">
-
 </head>
 
 <body>
+
 <div class="container">
     <h2 id="ekaotsikko">To-Do-list</h2>
 
@@ -15,17 +15,16 @@
         <input type="text" name="newtask" placeholder="add new task">
         <button class= "btn btn-dark"> Add Task </button>
 
-        <h2> Added Todos </h2>
+        <h2> Added  </h2>
         <% for( var i = 0; i < task.length; i++){ %>
             <li><input  type="checkbox" name="check" value="<%= task[i] %>" /> <%= task[i] %> </li>
         <% } %>
         <button formaction="/removetask" type="submit" id="top"  class="btn btn-dark"> Remove </button>
     </form>
-    <h2> Completed todo </h2>
+    <h2> Completed</h2>
     <% for(var i = 0; i < complete.length; i++){ %>
-        <li><input type="checkbox" checked><%= complete[i] %> </li>
+        <li><%= complete[i] %> </li>
     <% } %>
-
 </div>
 
 </body>

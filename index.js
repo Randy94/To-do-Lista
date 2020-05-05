@@ -22,16 +22,16 @@ app.post("/add", function(req, res) {
 });
 
 app.post("/removetask", function(req, res) {
-    var completeTask = req.body.check;
+    var finishedtask = req.body.check;
     // tarkista, onko eri suoritetun tehtävän "tyyppi", ja lisää sitten suoritettuun tehtävään.
-    if (typeof completeTask === "string") {
-        complete.push(completeTask);
+    if (typeof finishedtask === "string") {
+        complete.push(finishedtask);
         //Katso jos suoritettu tehtävä on jo olemassa ja poista se.
-        task.splice(task.indexOf(completeTask), 1);
-    } else if (typeof completeTask === "object") {
-        for (var i = 0; i < completeTask.length; i++) {
-            complete.push(completeTask[i]);
-            task.splice(task.indexOf(completeTask[i]), 1);
+        task.splice(task.indexOf(finishedtask), 1);
+    } else if (typeof finishedtask === "object") {
+        for (var i = 0; i < finishedtask.length; i++) {
+            complete.push(finishedtask[i]);
+            task.splice(task.indexOf(finishedtask[i]), 1);
         }
     }
     res.redirect("/");
@@ -41,6 +41,7 @@ app.post("/removetask", function(req, res) {
 app.get("/", function(req, res) {
     res.render("index", { task: task, complete: complete });
 });
+
 
 //Pistä appi kuuntelemaan porttia  3000.
 app.listen(3000, function() {

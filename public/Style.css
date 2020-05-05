@@ -1,18 +1,19 @@
 * {
-    font-family: "lato", sans-serif;
-    font-weight: bold;
+
+    font-weight: bolder;
     font-size: x-large;
 }
 
 body {
     background: rgb(245, 245, 245);
     color: #333333;
-    margin-top: 20px;
+    margin-top: 50px;
+    margin-left: 400px;
 }
 
 .container {
     display: block;
-    width: 400px;
+    width: 300px;
     margin: 0 auto;
 }
 
@@ -21,11 +22,17 @@ ul {
     padding: 0;
 }
 h2{
-    font-size: 60px;
+    font-size: 40px;
     font-weight: bolder;
 }
 li{
     font-size: x-large;
+    font-weight: bolder;
 
 }
-
+head,body{
+    background-image: url("background.jpg");
+}
+input{
+    float: left;
+}
