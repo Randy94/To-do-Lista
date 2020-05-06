@@ -2,18 +2,19 @@
 
     font-weight: bolder;
     font-size: x-large;
+    font-family: "Times New Roman", serif;
 }
 
 body {
     background: rgb(245, 245, 245);
     color: #333333;
-    margin-top: 50px;
-    margin-left: 400px;
+    margin-top: 150px;
+
 }
 
 .container {
     display: block;
-    width: 300px;
+    width: 400px;
     margin: 0 auto;
 }
 
@@ -22,7 +23,7 @@ ul {
     padding: 0;
 }
 h2{
-    font-size: 40px;
+    font-size: 50px;
     font-weight: bolder;
 }
 li{
@@ -31,8 +32,12 @@ li{
 
 }
 head,body{
-    background-image: url("background.jpg");
+    background-image: url("273277-new-grey-background-1920x1080-photos.jpg");
 }
 input{
     float: left;
+}
+h1{
+    font-weight: bolder;
+    font-size: 85px;
 }

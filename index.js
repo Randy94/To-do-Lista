@@ -11,7 +11,7 @@ app.use(express.static("public"));
 //placeholders uusille taskeille
 var task = ["tee projekti" , "Muista pestä kädet"];
 //placeholders for poistetuille taskeille
-var complete = ["harjoittele lisää rest apin käyttöä"];
+var complete = ["harjoittele lisää koodamista"];
 
 //Lisätään uusi task
 app.post("/add", function(req, res) {
@@ -36,6 +36,8 @@ app.post("/removetask", function(req, res) {
     }
     res.redirect("/");
 });
+
+
 
 //renderöi ejs ja näytä lisätty tehtävä, valmis tehtävä.
 app.get("/", function(req, res) {
