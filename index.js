@@ -1,8 +1,24 @@
+
+
 //sovelluksen tarvitsemat riippuvuudet
 var express = require("express");
 var bodyParser = require("body-parser");
 var app = express();
+var mysql = require('mysql');
 
+const db = mysql.createConnection ({
+    host: 'localhost',
+    user: 'root',
+    password: 'h572g1rts4',
+    database: 'webprojektidb'
+});
+
+db.connect((err) => {
+    if (err) {
+        throw err;
+    }
+    console.log('Connected to database');
+});
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 //renderöi public tiedostot.
@@ -46,6 +62,6 @@ app.get("/", function(req, res) {
 
 
 //Pistä appi kuuntelemaan porttia  3000.
-app.listen(3000, function() {
+app.listen(3001, function() {
     console.log("server is running on port 3000");
 });
