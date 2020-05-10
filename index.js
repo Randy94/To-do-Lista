@@ -6,6 +6,7 @@ var bodyParser = require("body-parser");
 var app = express();
 var mysql = require('mysql');
 
+// Tietokannan yhteys
 const db = mysql.createConnection ({
     host: 'localhost',
     user: 'root',
@@ -31,9 +32,14 @@ var complete = ["harjoittele lisää koodamista"];
 
 //Lisätään uusi task
 app.post("/add", function(req, res) {
+
     var newTask = req.body.newtask;
     //add the new task from the post route
     task.push(newTask);
+    db.query('INSERT INTO todo (Teksti) values (?)', [newTask] , function (err,result,fields) {
+        console.log("Tietokantaan asettaminen onnistui!")
+    });
+
     res.redirect("/");
 });
 
@@ -50,6 +56,9 @@ app.post("/removetask", function(req, res) {
             task.splice(task.indexOf(finishedtask[i]), 1);
         }
     }
+    db.query('DELETE FROM todo WHERE Teksti = ?', [finishedtask] , function (err,result,fields) {
+        console.log("Tietokantaan poistaminen onnistui!")
+    });
     res.redirect("/");
 });
 
